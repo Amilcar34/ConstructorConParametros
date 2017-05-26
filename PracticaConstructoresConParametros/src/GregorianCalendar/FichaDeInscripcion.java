@@ -1,27 +1,40 @@
 package GregorianCalendar;
 
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 public class FichaDeInscripcion {
 	
 	private String nombre;
 	private String apellido;
-	private Date fechaEntrada;
-	private Date fechaSalida;
+
 	private double altura;
 	 
-	public FichaDeInscripcion(String nomb, String apel, int dia1, int mes1, int anno1, int dia2 , int mes2, int anno2, double altu )
-	{this.nombre= nomb; this.apellido = apel; 
-		GregorianCalendar datoCalendario = new GregorianCalendar(anno1,mes1,dia1);
-		this.fechaEntrada = datoCalendario.getTime();
-
-		GregorianCalendar datoCalendario2 = new GregorianCalendar(anno2, mes2, dia2);
-		this.fechaSalida = datoCalendario2.getTime();
-
-		this.altura = altu;}
+	public FichaDeInscripcion(String nombre, String apellido, double altura )
+	{
+		this.nombre= nombre;
+		this.apellido = apellido;
+		this.altura = altura;}
 	
-	
+//Metodo comun creado
 	public String dime_datos()
-	{return "el nombre es: " + nombre;} //+ apellido + fechaEntrada + fechaSalida + altura
+			{
+				return "el nombre es: " + nombre + ", su apellido es " + apellido + " y su altura es de " + altura + " metros.";
+			}	
+	
+//Metodo toString de la clase Object
+	public String toString()
+			{
+				return "El apellido es: " + apellido; 
+			}	
+	
+//Metodo toString de la clase object sobrecargado	
+	public String toString(double altura)
+			{
+				return "La altura es: " + altura;
+			}
+	
+//No se porque no te aparecía nada, sin embargo como verás ahora anda y muy bien.
+//Fijate la sobre carga al metodo toString()
+//Lo más probable es que no hayas asignado parametros al cuerpo del constructor, sin embargo la
+//hice facil y borre todo y lo modifique para que ande.
+//Mira el main vas a ver que todos devuelven un String pero sométodos distintos y que funcionan los constructores
+//Como un setter gigante con la diferencia que no se le debe declarar el return al final.
 }
