@@ -4,12 +4,14 @@ public class Alumnos {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-	FichaDeInscripcion alumno1 = new FichaDeInscripcion("Juan Carlos", "ALberino", 01,02,1993,05,07,2000, 1.80);
-	FichaDeInscripcion alumno2 = new FichaDeInscripcion("Florencia", "Montenegro", 02, 03, 1994, 05, 12 , 2000 , 1.60 );
+		
+		FichaDeInscripcion alumno1 = new FichaDeInscripcion("Javier Alvaro", 1.7 , 28, 5, 2017 );
+		FichaDeInscripcion alumno2 = new FichaDeInscripcion("Jav Alv", 1.8 , 12, 8, 1993 );
+		FichaDeInscripcion alumno3 = new FichaDeInscripcion("Maria Este", 1.8 , 12, 8, 2017 );
 	
-	System.out.println(alumno1.dime_datos());
-	System.out.println(alumno2.dime_datos());
+		System.out.println(alumno1.devuelve_noAp() + " " + alumno1.devuelve_al() + " " + alumno1.devuelve_feIn());
+		System.out.println(alumno2.devuelve_noAp() + " "+ alumno2.devuelve_al() + " " + alumno2.devuelve_feIn());
+		System.out.println(alumno3.devuelve_noAp() + " "+ alumno3.devuelve_al() + " " + alumno3.devuelve_feIn());
+	
 	}
-
 }
