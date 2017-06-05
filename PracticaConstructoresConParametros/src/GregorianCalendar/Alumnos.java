@@ -5,7 +5,7 @@ public class Alumnos {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		FichaDeInscripcion alumno1 = new FichaDeInscripcion("Javier Alvaro", 1.7 , 1, 6, 2017 );
+		FichaDeInscripcion alumno1 = new FichaDeInscripcion("Javier Alvaro", 1.7 , 4, 6, 2017 );
 		FichaDeInscripcion alumno2 = new FichaDeInscripcion("Jav Alv", 1.8 , 12, 8, 1993 );
 		FichaDeInscripcion alumno3 = new FichaDeInscripcion("Maria Este", 1.8 , 29, 5, 2017 );
 	

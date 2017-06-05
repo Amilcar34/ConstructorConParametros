@@ -5,18 +5,19 @@ import java.util.*;
 public class FichaDeInscripcion {
 	
 	
-	String nombreApellido;
-	double altura;
-	String fechaInscripcion;
+	private final String nombreApellido;
+	private final double altura;
+	private String fechaInscripcion;
 	
-	String diaI;
-	String mesI;
+	private final String diaI;
+	private final String mesI;
 	
-	String diaE;
-	String mesE;
+	private final String diaE;
+	private final String mesE;
 	
-	String annoE;
-	String nDia;
+	private final String annoE;
+	private final String nDia;
+	String convertido;
 	
 	public FichaDeInscripcion(String nomApe, double altura, int dia, int mes, int anno)
 	{
@@ -25,7 +26,7 @@ public class FichaDeInscripcion {
 		
 		GregorianCalendar calendario = new GregorianCalendar (anno, mes - 1, dia);
 		Date date = calendario.getTime();
-		String convertido = date.toString();
+		convertido = date.toString();
 		
 		DesarmadoDate fechaDesarmada = new DesarmadoDate(convertido);
 		this.diaI = fechaDesarmada.devuelve_diaI();
@@ -34,13 +35,11 @@ public class FichaDeInscripcion {
 		this.nDia = fechaDesarmada.devuelve_nDia();
 		
 		Traductor fechaTraducida = new Traductor();
-		fechaTraducida.ResiDiaI(diaI);
-		fechaTraducida.ResiMesE(mesI);
+		fechaTraducida.ResiDiaI(fechaDesarmada.devuelve_diaI());  // no le llega el parametro
+		fechaTraducida.ResiMesE(fechaDesarmada.devuelve_mesI());  //no le llega el parametro
 		
 		this.diaE = fechaTraducida.TraDiaE();
 		this.mesE = fechaTraducida.TraMesE();
-		
-		
 	}
 	
 	public String devuelve_noAp()
@@ -49,10 +48,8 @@ public class FichaDeInscripcion {
 	public double devuelve_al()
 	{return altura;}
 	
-	
-	
 	public String devuelve_feIn()
-		{return diaE + nDia + mesE + annoE + diaI + mesI;}
+		{return diaE + nDia + mesE + annoE + diaI + mesI + convertido;}
 
 	
 }
