@@ -4,7 +4,6 @@ import java.util.*;
 
 public class FichaDeInscripcion {
 	
-	
 	private final String nombreApellido;
 	private final double altura;
 	private String fechaInscripcion;
@@ -17,7 +16,6 @@ public class FichaDeInscripcion {
 	
 	private final String annoE;
 	private final String nDia;
-	String convertido;
 	
 	public FichaDeInscripcion(String nomApe, double altura, int dia, int mes, int anno)
 	{
@@ -26,7 +24,7 @@ public class FichaDeInscripcion {
 		
 		GregorianCalendar calendario = new GregorianCalendar (anno, mes - 1, dia);
 		Date date = calendario.getTime();
-		convertido = date.toString();
+		String convertido = date.toString();
 		
 		DesarmadoDate fechaDesarmada = new DesarmadoDate(convertido);
 		this.diaI = fechaDesarmada.devuelve_diaI();
@@ -36,7 +34,7 @@ public class FichaDeInscripcion {
 		
 		Traductor fechaTraducida = new Traductor();
 		fechaTraducida.ResiDiaI(fechaDesarmada.devuelve_diaI());  // no le llega el parametro
-		fechaTraducida.ResiMesE(fechaDesarmada.devuelve_mesI());  //no le llega el parametro
+		fechaTraducida.ResiMesE(mesI);  //no le llega el parametro
 		
 		this.diaE = fechaTraducida.TraDiaE();
 		this.mesE = fechaTraducida.TraMesE();
@@ -49,7 +47,7 @@ public class FichaDeInscripcion {
 	{return altura;}
 	
 	public String devuelve_feIn()
-		{return diaE + nDia + mesE + annoE + diaI + mesI + convertido;}
+		{return diaE+" "+nDia+" "+mesE+" "+annoE+" "+diaI+" "+mesI;}
 
 	
 }
